@@ -1,15 +1,22 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "short_name": "Pundit",
+  "name": "Helps Pun",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "web_accessible_resources": [
+    "index.html"
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "*://*/*"
+  ],
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; default-src 'self'; object-src 'self'"
 }
