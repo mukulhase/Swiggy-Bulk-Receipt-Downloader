@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "version": "1.0.0",
-  "short_name": "Pundit",
-  "name": "Helps Pun",
+  "short_name": "Swig-Swig by Mukul Hase",
+  "name": "Download Receipts from Swiggy",
   "background": {
     "scripts": [
       "background.js"
@@ -13,10 +13,12 @@
     "index.html"
   ],
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
   },
   "permissions": [
-    "*://*/*"
+    "*://*/*",
+    "downloads"
   ],
-  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; default-src 'self'; object-src 'self'"
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; default-src 'self'; connect-src https://www.swiggy.com;  style-src 'self' 'unsafe-inline'; object-src 'self'"
 }

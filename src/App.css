@@ -1,5 +1,11 @@
 .App {
     backdrop-filter: blur(4px) saturate(150%);
     background-color: rgba(255, 255, 255, .9);
+    min-width: 40em;
+}
 
+.list-container {
+    max-height: 20em;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
