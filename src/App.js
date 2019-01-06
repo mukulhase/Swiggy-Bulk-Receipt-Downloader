@@ -46,6 +46,9 @@ class App extends Component {
     const next = (lastorderid) => {
       fetch(api_url + lastorderid).then(response => response.json()).then((response) => {
         if (!final_length) {
+          if(!response.data){
+            alert("Log into Swiggy first!");
+          }
           final_length = response.data.total_orders;
           this.setState({"total": final_length});
         }
