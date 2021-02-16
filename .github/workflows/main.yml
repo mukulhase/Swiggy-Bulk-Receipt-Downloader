@@ -24,7 +24,7 @@ jobs:
         npm run build
         zip -r ./release.zip build
     - name: Upload & release
-      uses: Klemensas/chrome-extension-upload-action@$VERSION
+      uses: Klemensas/chrome-extension-upload-action@1.4.1
       with:
         client-id: ${{ secrets.CLIENT_ID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
