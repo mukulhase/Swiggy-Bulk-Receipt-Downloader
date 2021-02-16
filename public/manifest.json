@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "short_name": "Swig-Swig by Mukul Hase",
   "name": "Download Receipts from Swiggy",
   "background": {
