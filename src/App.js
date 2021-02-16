@@ -125,76 +125,71 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Paper elevation={10}>
-            <AppBar position="static">
-              <Toolbar>
-                <Typography component="h1" variant="h5" color={"inherit"}>
-                  Swiggy receipt scraper
-                </Typography>
-              </Toolbar>
-            </AppBar>
+          <AppBar position="static">
+            <Toolbar>
+              <Typography component="h1" variant="h5" color={"inherit"}>
+                Swiggy receipt scraper
+              </Typography>
+            </Toolbar>
+          </AppBar>
 
-            <Grid container spacing={16} style={{ padding: 16 }}>
-              <Grid item xs={12} justify={"center"}>
-                <Button
-                  variant={"contained"}
-                  color={"secondary"}
-                  onClick={this.onClick}
-                >
-                  Run Query
-                </Button>
-              </Grid>
-              <Grid item xs={12}>
-                {this.state.total ? (
-                  [
-                    <h1>Total: {this.state.total}</h1>,
-                    this.state.loaded ? (
-                      <Grid container spacing={16}>
-                        <Grid item xs={3}>
-                          <Typography variant={"button"}>City:</Typography>
-                        </Grid>
-                        <Grid item xs={9}>
-                          <Select
-                            isMulti={true}
-                            options={this.getOptions()}
-                            value={this.state.selected}
-                            onChange={this.handleSelect}
-                          />
-                        </Grid>
-                        <Grid item xs={3}>
-                          <Typography variant={"button"}>
-                            Date Range:
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={9}>
-                          <DatetimeRangePicker onChange={this.onChangeDate} />
-                        </Grid>
-                        <Divider />
-                        <Button
-                          fullWidth={true}
-                          variant={"contained"}
-                          color={"primary"}
-                          onClick={this.onClickDownload}
-                        >
-                          Download
-                        </Button>
-                      </Grid>
-                    ) : (
-                      <LinearProgress
-                        variant={"determinate"}
-                        value={(99 * this.state.ml.length) / this.state.total}
-                      />
-                    )
-                  ]
-                ) : (
-                  <Typography align={"center"} variant={"display2"}>
-                    Run query first!
-                  </Typography>
-                )}
-              </Grid>
+          <Grid container spacing={16} style={{ padding: 16 }}>
+            <Grid item xs={12} justify={"center"}>
+              <Button
+                variant={"contained"}
+                color={"secondary"}
+                onClick={this.onClick}
+              >
+                Run Query
+              </Button>
             </Grid>
-          </Paper>
-
+            <Grid item xs={12}>
+              {this.state.total ? (
+                [
+                  <h1>Total: {this.state.total}</h1>,
+                  this.state.loaded ? (
+                    <Grid container spacing={16}>
+                      <Grid item xs={3}>
+                        <Typography variant={"button"}>City:</Typography>
+                      </Grid>
+                      <Grid item xs={9}>
+                        <Select
+                          isMulti={true}
+                          options={this.getOptions()}
+                          value={this.state.selected}
+                          onChange={this.handleSelect}
+                        />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Typography variant={"button"}>Date Range:</Typography>
+                      </Grid>
+                      <Grid item xs={9}>
+                        <DatetimeRangePicker onChange={this.onChangeDate} />
+                      </Grid>
+                      <Divider />
+                      <Button
+                        fullWidth={true}
+                        variant={"contained"}
+                        color={"primary"}
+                        onClick={this.onClickDownload}
+                      >
+                        Download
+                      </Button>
+                    </Grid>
+                  ) : (
+                    <LinearProgress
+                      variant={"determinate"}
+                      value={(99 * this.state.ml.length) / this.state.total}
+                    />
+                  )
+                ]
+              ) : (
+                <Typography align={"center"} variant={"display2"}>
+                  Run query first!
+                </Typography>
+              )}
+            </Grid>
+          </Grid>
           <h2>Total Queried: {this.filtered(this.state.ml).length}</h2>
           <div className={"list-container"}>
             <List>
