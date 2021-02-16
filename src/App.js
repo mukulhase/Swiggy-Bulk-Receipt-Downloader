@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import "typeface-roboto";
 import Button from "@material-ui/core/Button";
