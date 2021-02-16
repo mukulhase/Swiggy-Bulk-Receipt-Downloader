@@ -22,12 +22,14 @@ jobs:
       run: |
         npm ci
         npm run build
-        zip -r release.zip build
+        zip -r ./release.zip build
     - name: Upload & release
-      uses: mnao305/chrome-extension-upload@1.1.1
+      uses: Klemensas/chrome-extension-upload-action@$VERSION
       with:
-        file-path: release.zip
-        extension-id: beoepmpgphdajkefnfjclbdhmjbhkfna
         client-id: ${{ secrets.CLIENT_ID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
         refresh-token: ${{ secrets.REFRESH_TOKEN }}
+        file-name: './release.zip'
+        app-id: 'beoepmpgphdajkefnfjclbdhmjbhkfna'
+        publish: true
+        
