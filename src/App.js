@@ -85,8 +85,6 @@ class App extends Component {
     });
     if (this.state.selected.length > 0) {
       filtered = filtered.filter((obj) => {
-        console.log(this.state.selected.map((obj) => obj.value));
-        console.log(obj.delivery_address.city);
         return this.state.selected
           .map((obj) => obj.value)
           .includes(obj.delivery_address.city);
